@@ -1,0 +1,7 @@
+[package]
+name = "ggez-soundtest"
+version = "0.1.0"
+authors = ["Simon Heath <icefoxen@gmail.com>"]
+
+[dependencies]
+ggez = {git = "https://github.com/ggez/ggez.git"}
