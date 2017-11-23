@@ -18,7 +18,15 @@ impl MainState {
     fn new(ctx: &mut Context) -> GameResult<MainState> {
         ctx.print_resource_stats();
 
-        let sound = audio::Source::new(ctx, "/sound.ogg").unwrap();
+        // Original audio file from Takwolf that caused errors
+        // vlc manages to play it fine but ggez has problems with it.
+        // let sound = audio::Source::new(ctx, "/audio_simple_with_error.ogg").unwrap();
+
+        // The same thing, re-encoded with sox.  ggez plays it fine.
+        // let sound = audio::Source::new(ctx, "/audio_simple_with_error2.ogg").unwrap();
+
+        // Random third-party song from OCRemix, sounds fine.
+        let sound = audio::Source::new(ctx, "/Final_Fantasy_5_Cursed_Pirates_of_the_Sea_OC_ReMix.ogg").unwrap();
 
         let _ = sound.play();
 
